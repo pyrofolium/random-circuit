@@ -17735,7 +17735,7 @@ function SvgNetListLoader(props) {
       const worker = new Worker(
         new URL(
           /* @vite-ignore */
-          "" + new URL("NetListWorker-Dyt-DpsL.js", import.meta.url).href,
+          "" + new URL("./NetListWorker-Dyt-DpsL.js", import.meta.url).href,
           import.meta.url
         ),
         { type: "module" }
