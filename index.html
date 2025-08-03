@@ -17916,6 +17916,19 @@ function SvgQueueContextProvider({ children }) {
 }
 function App() {
   const [netList, setNetList] = reactExports.useState(createRandomNetList(MAX_COMPONENTS_FOR_RAND_GEN, MAX_PINS_FOR_RAND_GEN));
+  reactExports.useEffect(() => {
+    const preventDefault = (e) => {
+      const target = e.target;
+      const isInTestGenerator = target.closest(".generator-modal") !== null;
+      if (!isInTestGenerator) {
+        e.preventDefault();
+      }
+    };
+    document.body.addEventListener("wheel", preventDefault, { passive: false });
+    return () => {
+      document.body.removeEventListener("wheel", preventDefault);
+    };
+  }, []);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "randomizer bar", onClick: () => {
       let netList2 = createRandomNetList(MAX_COMPONENTS_FOR_RAND_GEN, MAX_PINS_FOR_RAND_GEN);
@@ -17936,7 +17949,7 @@ function App() {
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-single-C_8nnh8n.js.map</script>
+//# sourceMappingURL=index-single-BRKDzvJx.js.map</script>
   <style rel="stylesheet" crossorigin>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 * {
