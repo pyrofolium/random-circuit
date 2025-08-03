@@ -17735,7 +17735,7 @@ function SvgNetListLoader(props) {
       const worker = new Worker(
         new URL(
           /* @vite-ignore */
-          "" + new URL("./NetListWorker-Dyt-DpsL.js", import.meta.url).href,
+          "" + new URL("NetListWorker-Dyt-DpsL.js", import.meta.url).href,
           import.meta.url
         ),
         { type: "module" }
@@ -17909,11 +17909,8 @@ function requireQueue() {
   queue$1.Queue = Queue;
   return queue$1;
 }
-var queueExports = requireQueue();
-const SvgQueueContext = reactExports.createContext(void 0);
-function SvgQueueContextProvider({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(SvgQueueContext, { value: new queueExports.Queue(), children });
-}
+requireQueue();
+reactExports.createContext(void 0);
 function App() {
   const [netList, setNetList] = reactExports.useState(createRandomNetList(MAX_COMPONENTS_FOR_RAND_GEN, MAX_PINS_FOR_RAND_GEN));
   reactExports.useEffect(() => {
@@ -17937,19 +17934,19 @@ function App() {
       }
       setNetList(netList2);
     }, children: "RANDOM" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SvgQueueContextProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
       SvgNetListLoader,
       {
         scale: SVG_SCALE,
         netList
       }
-    ) })
+    )
   ] });
 }
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-single-BRKDzvJx.js.map</script>
+//# sourceMappingURL=index-single-Do4uBOWR.js.map</script>
   <style rel="stylesheet" crossorigin>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 * {
